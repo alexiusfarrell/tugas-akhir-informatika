@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderer Login/Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('travel stock image.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: white; 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #545454; 
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #cacaca; 
+            color: white;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signup-link a {
+            color: #002944; 
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Halaman Login -->
+    <form id="loginForm">
+        <h2>Login</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+        <div class="signup-link">
+            Don't have an account? <a href="#" onclick="toggleForm()">Sign up</a>
+        </div>
+    </form>
+
+    <!-- Halaman Register -->
+    <form id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+    
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname"><br><br>
+    
+        <label for="email">E-mail Address:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+    
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+    
+        <label for="confirmpassword">Confirm Password:</label><br>
+        <input type="password" id="confirmpassword" name="confirmpassword"><br><br>
+    
+        <input type="submit" value="Register">
+        
+        <button type="submit">Register</button>
+        <div class="signup-link">
+            Already have an account? <a href="#" onclick="toggleForm()">Login</a>
+        </div>
+    </form>
+
+    <script>
+        // Toggle antara halaman login dan register
+        function toggleForm() {
+            var loginForm = document.getElementById('loginForm');
+            var registerForm = document.getElementById('registerForm');
+
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
